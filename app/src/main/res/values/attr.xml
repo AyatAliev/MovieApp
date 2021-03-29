@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MainToolbar">
+        <attr name="mt_title" format="string"/>
+        <attr name="mt_background" format="integer"/>
+    </declare-styleable>
+</resources>

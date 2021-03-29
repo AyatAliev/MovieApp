@@ -1,0 +1,35 @@
+<resources>
+    <!-- Margins -->
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="element_margin">8dp</dimen>
+    <dimen name="medium_margin">12dp</dimen>
+    <dimen name="page_margin">16dp</dimen>
+    <dimen name="big_margin">24dp</dimen>
+    <dimen name="page_margin_x2">32dp</dimen>
+    <dimen name="page_margin_x3">48dp</dimen>
+
+    <!--Text Sizes-->
+    <dimen name="toolbar_title">20sp</dimen>
+    <dimen name="toolbar_small_title">18sp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
+    <dimen name="text_size_medium">12sp</dimen>
+    <dimen name="text_size_page">16sp</dimen>
+
+    <!--Corners-->
+    <dimen name="radius_pad_corners">25dp</dimen>
+
+    <!--Width and height-->
+    <dimen name="splash_wave_width">1500dp</dimen>
+    <dimen name="tools_image_size">64dp</dimen>
+    <dimen name="tools_layout_size">72dp</dimen>
+    <dimen name="album_layout_size">48dp</dimen>
+    <dimen name="album_image_size">24dp</dimen>
+
+    <!--Pager dote-->
+    <dimen name="pager_dote">5dp</dimen>
+    <dimen name="pager_dote_size">14dp</dimen>
+
+    <dimen name="height_graph_on_main_menu_home_screen">200dp</dimen>
+    <dimen name="height_graph_on_device_info_screen">116dp</dimen>
+
+</resources>
