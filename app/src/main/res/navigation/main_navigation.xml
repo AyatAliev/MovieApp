@@ -3,24 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/home_fragment">
 
-    <!--Home -> Profile-->
+    <!--Home -> Movie Info -->
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.filminfo.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
+        android:id="@+id/home_fragment"
+        android:name="com.example.movie.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+
         <action
-            android:id="@+id/action_navigation_home_to_navigation_profile"
-            app:destination="@id/navigation_profile"
-            app:popUpTo="@layout/fragment_home"/>
+            android:id="@+id/action_movie_info_fragment"
+            app:destination="@id/movie_info_fragment"
+            app:popUpTo="@+id/home_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left" />
+
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_profile"
-        android:name="com.example.filminfo.ui.profile.ProfileFragment"
-        android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/movie_info_fragment"
+        android:name="com.example.movie.ui.movie_info.MovieInfoFragment"
+        tools:layout="@layout/fragment_movie_info">
+
+        <argument
+            android:name="movieId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+
+    </fragment>
 
 </navigation>

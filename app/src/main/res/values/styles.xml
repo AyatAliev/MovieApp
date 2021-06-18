@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- TextViews-->
+
+    <style name="TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextView.White" parent="TextView">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextView.Toolbar" parent="TextView">
+
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginStart">@dimen/middle_margin</item>
+        <item name="android:layout_marginLeft">@dimen/middle_margin</item>
+        <item name="android:textSize">@dimen/toolbar_title</item>
+    </style>
+
+    <style name="TextView.Page" parent="TextView">
+
+        <item name="android:textSize">@dimen/text_size_page</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextView.Medium" parent="TextView">
+
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="TextView.H1" parent="TextView">
+
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Image View-->
+    <style name="ImageView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <!--Loaders-->
+    <style name="Loader" />
+
+    <style name="Loader.Light.Medium" parent="Loader">
+        <item name="android:layout_width">@dimen/loader_medium</item>
+        <item name="android:layout_height">@dimen/loader_medium</item>
+        <item name="android:indeterminateTint" tools:targetApi="lollipop">@color/white</item>
+    </style>
+
+    <style name="Loader.Dark.Medium" parent="Loader">
+        <item name="android:layout_width">@dimen/loader_medium</item>
+        <item name="android:layout_height">@dimen/loader_medium</item>
+        <item name="android:indeterminateTint" tools:targetApi="lollipop">@android:color/holo_red_light</item>
+    </style>
+
+</resources>

@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">FilmInfo</string>
+    <string name="app_name">MovieApp</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_profile">Profile</string>
     <string name="all_list">Movie List</string>
+
+    <!--Content Description-->
+    <string name="add_image_for_movie">Add image for movie</string>
 </resources>
