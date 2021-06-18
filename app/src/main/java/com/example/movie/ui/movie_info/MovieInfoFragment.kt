@@ -1,13 +1,17 @@
 package com.example.movie.ui.movie_info
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
+import com.example.movie.R
 import com.example.movie.core.netwrok.result.Status
 import com.example.movie.core.ui.BaseFragment
 import com.example.movie.databinding.FragmentMovieInfoBinding
+import com.example.movie.extentions.fetchDrawable
 import com.example.movie.extentions.loadImage
 import com.example.movie.extentions.visible
 import com.example.movie.models.MovieInfo
@@ -20,6 +24,7 @@ class MovieInfoFragment : BaseFragment<MovieInfoViewModel, FragmentMovieInfoBind
 
     private val args: MovieInfoFragmentArgs by navArgs()
     private lateinit var movieInfo: MovieInfo
+    private var progress = 0
 
     override fun inflateViewBinding(
         inflater: LayoutInflater,
@@ -68,9 +73,33 @@ class MovieInfoFragment : BaseFragment<MovieInfoViewModel, FragmentMovieInfoBind
     }
 
     private fun setUI() {
-        viewBinding.ivMovie.loadImage(movieInfo.poster_path)
+        viewBinding.ivMovie.loadImage(movieInfo.posterPath)
 
         viewBinding.tvTitle.text = movieInfo.title
         viewBinding.tvDesc.text = movieInfo.overview
+
+        viewBinding.tvPopularity.text = StringBuffer("${movieInfo.voteAverage?.times(10)?.toInt().toString()}%")
+        raisingProgressBar()
     }
+
+    private fun raisingProgressBar() {
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            progress++
+
+            viewBinding.pbPopularity.progress = progress
+
+            when(progress) {
+                30 -> viewBinding.pbPopularity.progressDrawable = context?.fetchDrawable(R.drawable.pb_popularity_yellow)
+                60 -> viewBinding.pbPopularity.progressDrawable = context?.fetchDrawable(R.drawable.pb_popularity_green)
+            }
+
+            if (progress < movieInfo.voteAverage?.times(10)?.toInt()!!) {
+                raisingProgressBar()
+            }
+
+        }, 100)
+
+    }
+
 }

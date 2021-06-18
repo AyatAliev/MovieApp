@@ -14,7 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.example.movie.R
 
-abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding> : Fragment() {
+abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding> : Fragment() {
 
     protected abstract val viewModel: VM
     protected lateinit var viewBinding: VB
@@ -48,7 +48,8 @@ abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding> : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navHostFragment =
+            activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         _navController = navHostFragment.navController
 
         initView()
@@ -69,7 +70,7 @@ abstract class BaseFragment<VM: BaseViewModel, VB: ViewBinding> : Fragment() {
         return _navController?.currentDestination?.id
     }
 
-    fun hideKeyboard() {
+    private fun hideKeyboard() {
         context?.let {
             val imm = ContextCompat.getSystemService(it, InputMethodManager::class.java)
             imm?.hideSoftInputFromWindow(view?.windowToken, 0)

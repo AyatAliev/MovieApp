@@ -17,8 +17,7 @@ import kotlin.collections.ArrayList
 class HomeAdapter(
     private var list: ArrayList<Result>,
     private val clickListener: (address: Result) -> Unit
-) :
-    RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 

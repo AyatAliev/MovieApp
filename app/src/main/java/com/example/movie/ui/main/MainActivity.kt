@@ -26,17 +26,12 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>() {
     }
 
     override fun onBackPressed() {
-        when {
-            navController?.navigateUp() == false -> {
-                super.onBackPressed()
-            }
-            else -> {
-                super.onBackPressed()
-            }
+        if (navController?.navigateUp() == false) {
+            super.onBackPressed()
         }
     }
 
-    override fun inflateViewBinding(inflater: LayoutInflater): ActivityMainBinding {
-        return ActivityMainBinding.inflate(inflater)
+        override fun inflateViewBinding(inflater: LayoutInflater): ActivityMainBinding {
+            return ActivityMainBinding.inflate(inflater)
+        }
     }
-}

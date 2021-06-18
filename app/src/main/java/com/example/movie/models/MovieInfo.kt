@@ -1,34 +1,35 @@
 package com.example.movie.models
 
+import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class MovieInfo(
     val adult: Boolean?,
-    val backdrop_path: String?,
-    val belongs_to_collection: BelongsToCollection?,
+    @Json(name = "backdrop_path")  val backdropPath: String?,
+    @Json(name = "belongs_to_collection") val belongsToCollection: BelongsToCollection?,
     val budget: Int?,
     val genres: List<Genre>?,
     val homepage: String?,
     val id: Int?,
-    val imdb_id: String?,
-    val original_language: String?,
-    val original_title: String?,
+    @Json(name = "imdb_id") val imdbId: String?,
+    @Json(name = "original_language") val originalLanguage: String?,
+    @Json(name = "original_title") val originalTitle: String?,
     val overview: String?,
     val popularity: Double?,
-    val poster_path: String?,
-    val production_companies: List<ProductionCompany>?,
-    val production_countries: List<ProductionCountry>?,
+    @Json(name = "poster_path") val posterPath: String?,
+    @Json(name = "production_companies") val productionCompanies: List<ProductionCompany>?,
+    @Json(name = "production_countries") val productionCountries: List<ProductionCountry>?,
     val release_date: String?,
     val revenue: Int?,
     val runtime: Int?,
-    val spoken_languages: List<SpokenLanguage>?,
+    @Json(name = "spoken_languages") val spokenLanguages: List<SpokenLanguage>?,
     val status: String?,
     val tagline: String?,
     val title: String?,
     val video: Boolean?,
-    val vote_average: Double?,
-    val vote_count: Int?
+    @Json(name = "vote_average") val voteAverage: Double?,
+    @Json(name = "vote_count") val voteCount: Int?
 )
 
 @JsonClass(generateAdapter = true)
@@ -39,29 +40,29 @@ data class Genre(
 
 @JsonClass(generateAdapter = true)
 data class BelongsToCollection(
-    val backdrop_path: Any?,
+    @Json(name = "backdrop_path") val backdropPath: Any?,
     val id: Int?,
     val name: String?,
-    val poster_path: Any?
+    @Json(name = "poster_path") val posterPath: Any?
 )
 
 @JsonClass(generateAdapter = true)
 data class ProductionCompany(
     val id: Int?,
-    val logo_path: String?,
+    @Json(name = "logo_path") val logoPath: String?,
     val name: String?,
-    val origin_country: String?
+    @Json(name = "origin_country") val originCountry: String?
 )
 
 @JsonClass(generateAdapter = true)
 data class ProductionCountry(
-    val iso_3166_1: String?,
+    @Json(name = "iso_3166_1") val iso31661: String?,
     val name: String?
 )
 
 @JsonClass(generateAdapter = true)
 data class SpokenLanguage(
-    val english_name: String?,
-    val iso_639_1: String?,
+    @Json(name = "english_name") val englishName: String?,
+    @Json(name = "iso_3166_1") val iso31661: String?,
     val name: String?
 )
